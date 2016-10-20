@@ -6,13 +6,13 @@ const compact = require('lodash.compact')
 const chroma = require('chroma-js')
 const hexy = /^#[0-9a-f]{3,6}$/i
 
-function isColorString(str) {
+const isColorString = (str) => {
   if (!str) return false
   if (str === 'none') return false
   return (str.length === 4 || str.length === 7) && str.match(hexy)
 }
 
-function color(str) {
+const color = (str) => {
   return isColorString(str) ? chroma(str) : null
 }
 
